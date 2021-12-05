@@ -32,7 +32,7 @@ bs = BeautifulSoup(res.text,'lxml')
 total = bs.find_all(class_ = 'col')
 #j_infos = []
 labels = ['j_name', 'j_code', 'j_url','j_big_type','j_small_type']
-with open('./.songyp0505/githubactionDemo/j_infos.csv', 'w',newline='') as f:
+with open('j_infos.csv', 'w',newline='') as f:
     writer = csv.DictWriter(f, fieldnames=labels)
     writer.writeheader()
     for i in total:
@@ -51,4 +51,5 @@ with open('./.songyp0505/githubactionDemo/j_infos.csv', 'w',newline='') as f:
                     get_Jinfo(url_1)
                 #print("-"*100)
                 k=1
+f.close()                
 print("已完成"+str(acount)+"条写入")
