@@ -32,7 +32,7 @@ bs = BeautifulSoup(res.text,'lxml')
 total = bs.find_all(class_ = 'col')
 #j_infos = []
 labels = ['j_name', 'j_code', 'j_url','j_big_type','j_small_type']
-with open('j_infos.csv', 'w',newline='') as f:
+with open('data/j_infos.csv', 'w',newline='') as f:
     writer = csv.DictWriter(f, fieldnames=labels)
     writer.writeheader()
     for i in total:

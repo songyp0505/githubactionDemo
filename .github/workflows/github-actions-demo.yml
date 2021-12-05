@@ -13,3 +13,11 @@ jobs:
     - run: python -m pip install --upgrade pip
     - run: pip install -r requirements.txt
     - run: python getAllJinfo.py
+ # Add new files in data folder, commit along with other modified files, push
+    - name: Commit files
+      run: |
+        git config --local user.name actions-user
+        git config --local user.email "actions@github.com"
+        git add /data* 
+        git commit -am "GH ACTION Headlines $(data)"
+        git push origin main
