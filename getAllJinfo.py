@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import csv
+import lxml
 
 def get_Jinfo(url):
     global acount
