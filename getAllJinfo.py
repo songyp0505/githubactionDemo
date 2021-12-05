@@ -43,7 +43,7 @@ with open('data/j_infos.csv', 'w',newline='') as f:
             for p in l.find_all('a'):
                 if k==0:
                     #print(re.split(' |\(',p.get_text())[1])
-                    j_big_type = re.split(' |\(',p.get_text())
+                    j_big_type = re.split(' |\(',p.get_text())[0]
                 else:
                     #print(p.get_text(),url_head+p['href'])
                     j_small_type=p.get_text()
